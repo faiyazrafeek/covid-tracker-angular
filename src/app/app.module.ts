@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
-import { Ng2GoogleChartsModule, GoogleChartsSettings } from 'ng2-google-charts';
+import { GoogleChartsModule } from 'angular-google-charts'
+
 
 import { AppComponent } from './app.component';
 import { NavabarComponent } from './components/navabar/navabar.component';
@@ -22,7 +23,7 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    Ng2GoogleChartsModule
+    GoogleChartsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
