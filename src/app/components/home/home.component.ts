@@ -14,14 +14,26 @@ export class HomeComponent implements OnInit {
   totalDeaths = 0;
   totalRecovered = 0;
   loading = true;
-
-  datatable = [];
-
   globalData: GlobalDataSummary[];
+  datatable = [];
+  chart = {
+    PieChart : "PieChart" ,
+    ColumnChart : 'ColumnChart' ,
+    LineChart : "LineChart",
+    height: 500,
+    options: {
+      animation:{
+        duration: 1000,
+        easing: 'out',
+      },
+      is3D: true
+    }
+  }
 
-  pie = 'PieChart'
-  column = 'ColumnChart'
+
   constructor(private dataService: DataServiceService) { }
+
+
 
   ngOnInit(): void {
 
@@ -38,6 +50,7 @@ export class HomeComponent implements OnInit {
                 this.totalDeaths += cs.deaths
                 this.totalRecovered += cs.active
               }
+
             })
 
             this.initChart('c');
@@ -47,8 +60,9 @@ export class HomeComponent implements OnInit {
           }
         }
       )
-
   }
+
+
 
   updateChart(input: HTMLInputElement) {
     console.log(input.value);
@@ -57,22 +71,18 @@ export class HomeComponent implements OnInit {
 
   initChart(caseType: string) {
 
-    let dt = [];
-
-    console.log(caseType);
-    console.log(this.globalData);
-
+    this.datatable = [];
+    // this.datatable.push(["Country", "Cases"])
 
     this.globalData.forEach(cs => {
       let value :number ;
       if (caseType == 'c')
         if (cs.confirmed > 2000)
-          value = cs.confirmed;
+          value = cs.confirmed
 
       if (caseType == 'a')
         if (cs.active > 2000)
           value = cs.active
-
       if (caseType == 'd')
         if (cs.deaths > 1000)
           value = cs.deaths
@@ -81,14 +91,12 @@ export class HomeComponent implements OnInit {
         if (cs.recovered > 2000)
             value = cs.recovered
 
-        if(value){
-          dt.push([
-           cs.country , value
+
+        this.datatable.push([
+            cs.country, value
           ])
-        }
     })
-    console.log(dt);
-    this.datatable = dt;
+    console.log(this.datatable);
 
   }
 

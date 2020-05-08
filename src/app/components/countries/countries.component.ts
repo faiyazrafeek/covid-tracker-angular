@@ -20,13 +20,15 @@ export class CountriesComponent implements OnInit {
   totalRecovered = 0;
   selectedCountryData : DateWiseData[];
   dateWiseData ;
-
   loading = true;
+  options: {
+    height : 500,
+    animation:{
+      duration: 1000,
+      easing: 'out',
+    },
+  }
 
-  dt = [];
-
-
-  line = 'LineChart'
   constructor(private service : DataServiceService) { }
 
   ngOnInit(): void {
@@ -46,11 +48,13 @@ export class CountriesComponent implements OnInit {
     ).subscribe(
       {
         complete : ()=>{
-         this.updateValues('India')
+         this.updateValues('Sri Lanka')
          this.loading = false;
         }
       }
     )
+
+
 
   }
 
@@ -61,7 +65,7 @@ export class CountriesComponent implements OnInit {
       dataTable.push([cs.date , cs.cases])
     })
 
-    this.dt = dataTable;
+
   }
 
   updateValues(country : string){
