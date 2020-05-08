@@ -1,50 +1,52 @@
 <div class="row">
   <div class="col-md-3">
-    <div class="card p-3 mb-3">
-      <div class="ui statistic">
-        <div class="label">
-          <h3>Confirmed</h3>
-        </div>
-        <div class="value">
-          {{ totalConfirmed }}
-        </div>
+    <div class="card bg-warning">
+      <div class="card-header h4">Confirmed</div>
+      <div class="card-body">
+        <h5 class="card-title h2">
+          <i class="fas fa-hospital-alt"></i>
+        </h5>
+        <p class="card-text display-4"> {{ totalConfirmed }}</p>
       </div>
     </div>
   </div>
+
   <div class="col-md-3">
-    <div class="card p-3 mb-3">
-      <div class="ui statistic">
-        <div class="label">
-          <h3>Deaths</h3>
-        </div>
-        <div class="value">
-          {{ totalDeaths }}
-        </div>
+    <div class="card" style="background: #F64A8F">
+      <div class="card-header h4">Deaths</div>
+      <div class="card-body">
+        <h5 class="card-title h2">
+          <i class="fas fa-hospital-alt"></i>
+        </h5>
+        <p class="card-text display-4"> {{ totalDeaths }}</p>
       </div>
     </div>
   </div>
+
   <div class="col-md-3">
-    <div class="card p-3 mb-3">
-      <div class="ui statistic">
-        <div class="label">
-          <h3>Active</h3>
-        </div>
-        <div class="value">
-          {{ totalActive }}
-        </div>
+    <div class="card bg-danger">
+      <div class="card-header h4">Active</div>
+      <div class="card-body">
+        <h5 class="card-title h2">
+          <i class="fas fa-hospital-alt"></i>
+        </h5>
+        <p class="card-text display-4"> {{ totalActive }}</p>
       </div>
     </div>
   </div>
+
   <div class="col-md-3">
-    <div class="card p-3 mb-3">
-      <div class="ui statistic">
-        <div class="label">
-          <h3>Recovered</h3>
-        </div>
-        <div class="value">
-          {{ totalRecovered }}
-        </div>
+    <div class="card" style="background: #50CD8A">
+      <div class="card-header h4">Recovered</div>
+      <div class="card-body">
+        <h5 class="card-title h2">
+          <i class="fas fa-hospital-alt"></i>
+        </h5>
+        <p class="card-text display-4"> {{ totalRecovered }}</p>
       </div>
     </div>
   </div>
 </div>
+
+
+

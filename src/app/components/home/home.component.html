@@ -2,9 +2,14 @@
   <div class="ui text loader">Loading</div>
 </div>
 
-<div class="jumbotron bg-white text-center">
-  <h1 class="display-4">COVID-19 Tracker</h1>
-  <hr>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h1 class="display-4">COVID-19 Tracker</h1>
+    <p class="lead">Web based Live COVID-19 Daily Statictics Dashboard</p>
+  </div>
+</div>
+
+<div class="container text-center">
   <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalDeaths]='totalDeaths' [totalActive]='totalActive' [totalRecovered]='totalRecovered'>
   </app-dashboard-card>
 </div>
