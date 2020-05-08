@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from 'src/app/services/data-service.service';
 import { GlobalDataSummary } from 'src/app/models/global-data';
 import { DateWiseData } from 'src/app/models/date-wise-data';
-import { GoogleChartInterface } from 'ng2-google-charts';
 import { merge } from 'rxjs';
 import { map } from 'rxjs/operators';
 

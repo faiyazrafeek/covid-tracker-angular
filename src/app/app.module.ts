@@ -23,7 +23,7 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleChartsModule.forRoot()
+    GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

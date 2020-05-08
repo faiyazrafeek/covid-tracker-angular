@@ -14,13 +14,18 @@ export class HomeComponent implements OnInit {
   totalDeaths = 0;
   totalRecovered = 0;
   loading = true;
-
-  datatable = [];
-
   globalData: GlobalDataSummary[];
 
-  pie = 'PieChart'
-  column = 'ColumnChart'
+
+
+  options: {
+    height:500,
+    animation:{
+      duration:1000,
+      easing:'out',
+    }
+  }
+
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit(): void {
@@ -88,7 +93,6 @@ export class HomeComponent implements OnInit {
         }
     })
     console.log(dt);
-    this.datatable = dt;
 
   }
 
