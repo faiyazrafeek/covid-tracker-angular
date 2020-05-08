@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
         duration: 1000,
         easing: 'out',
       },
-      is3D: true
     }
   }
 

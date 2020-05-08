@@ -21,12 +21,15 @@ export class CountriesComponent implements OnInit {
   selectedCountryData : DateWiseData[];
   dateWiseData ;
   loading = true;
-  options: {
-    height : 500,
-    animation:{
-      duration: 1000,
-      easing: 'out',
-    },
+  chart = {
+    LineChart : "LineChart",
+    height: 500,
+    options: {
+      animation:{
+        duration: 1000,
+        easing: 'out',
+      },
+    }
   }
 
   constructor(private service : DataServiceService) { }
