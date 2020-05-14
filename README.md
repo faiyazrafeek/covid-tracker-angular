@@ -4,10 +4,11 @@ Link : https://fa-covid.netlify.app/
 
 Web Based live COVID-19 daily Statistic Dashboard generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
  - Anyone can get updated with day to day COVID-19 cases around the world.
+ ![Home Page](https://github.com/faiyazrafeek/covid-tracker-angular/blob/master/src/assets/home.png)
  - Users can compare the counts using charts and tables.
+ ![Charts](https://github.com/faiyazrafeek/covid-tracker-angular/blob/master/src/assets/chart.png)
  - Users can check the counts of the countries that cases filed.
- 
-
+ ![Country](https://github.com/faiyazrafeek/covid-tracker-angular/blob/master/src/assets/country.png)
 
 ## Data API
 
