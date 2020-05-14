@@ -1,5 +1,7 @@
 # CovidTracker
 
+Link : https://fa-covid.netlify.app/
+
 Web Based live COVID-19 daily Statistic Dashboard generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Data API
@@ -10,6 +12,9 @@ https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data
 ## SPA framework
 Angular [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
+## Guide to deploy the application on a developer machine
+
+Just Clone this Repository and do the follwing
 
 ## Development server
 
