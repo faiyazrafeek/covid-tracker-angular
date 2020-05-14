@@ -1,6 +1,15 @@
 # CovidTracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+Web Based live COVID-19 daily Statistic Dashboard generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+
+## Data API
+
+Pulic API
+https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data
+
+## SPA framework
+Angular [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+
 
 ## Development server
 
