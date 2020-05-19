@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators'
 import { GlobalDataSummary } from '../models/global-data';
 import { DateWiseData } from '../models/date-wise-data';
 
@@ -9,9 +9,41 @@ import { DateWiseData } from '../models/date-wise-data';
 })
 export class DataServiceService {
 
-  private globalDataUrl = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/05-17-2020.csv`;
+  private baseURL = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/'
+
+  private globalDataUrl = ``
+  private extension = '.csv';
+  month
+  date;
+  year;
+
+  getDate(date : number){
+    if(date < 10){
+      return '0'+date
+    }
+    return date;
+  }
+
   private dateWiseDataUrl = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv`
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+    let now = new Date()
+    this.month = now.getMonth() +  1;
+    this.year = now.getFullYear();
+    this.date = now.getDate();
+
+    console.log(
+      {
+        date : this.date,
+        month : this.month,
+        year : this.year
+      });
+
+      this.globalDataUrl = `${this.baseURL}${this.getDate(this.month)}-${this.getDate(this.date)}-${this.year}${this.extension}`;
+      console.log(this.globalDataUrl);
+
+
+   }
 
   getDateWiseData() {
     return this.http.get(this.dateWiseDataUrl, { responseType: 'text' })
@@ -78,6 +110,14 @@ export class DataServiceService {
           }
         })
         return <GlobalDataSummary[]>Object.values(raw);
+      }),
+      catchError((error : HttpErrorResponse)=>{
+        if(error.status == 404){
+          this.date = this.date-1
+          this.globalDataUrl = `${this.baseURL}${this.getDate(this.month)}-${this.getDate(this.date)}-${this.year}${this.extension}`;
+        console.log(this.globalDataUrl);
+          return this.getGlobalData()
+        }
       })
     )
   }
