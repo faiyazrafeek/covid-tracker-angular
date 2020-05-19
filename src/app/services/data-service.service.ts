@@ -30,7 +30,7 @@ export class DataServiceService {
     let now = new Date()
     this.month = now.getMonth() +  1;
     this.year = now.getFullYear();
-    this.date = now.getDate();
+    this.date = now.getDate() - 1;
 
     console.log(
       {
@@ -41,8 +41,6 @@ export class DataServiceService {
 
       this.globalDataUrl = `${this.baseURL}${this.getDate(this.month)}-${this.getDate(this.date)}-${this.year}${this.extension}`;
       console.log(this.globalDataUrl);
-
-
    }
 
   getDateWiseData() {
@@ -110,14 +108,6 @@ export class DataServiceService {
           }
         })
         return <GlobalDataSummary[]>Object.values(raw);
-      }),
-      catchError((error : HttpErrorResponse)=>{
-        if(error.status == 404){
-          this.date = this.date-1
-          this.globalDataUrl = `${this.baseURL}${this.getDate(this.month)}-${this.getDate(this.date)}-${this.year}${this.extension}`;
-        console.log(this.globalDataUrl);
-          return this.getGlobalData()
-        }
       })
     )
   }
