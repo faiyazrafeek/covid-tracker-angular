@@ -32,14 +32,14 @@ export class DataServiceService {
     this.year = now.getFullYear();
     this.date = now.getDate() - 1;
 
-    console.log(
+    /*console.log(
       {
-        date : this.date,
+        date : this.date -1 ,
         month : this.month,
         year : this.year
-      });
+      }); */
 
-      this.globalDataUrl = `${this.baseURL}${this.getDate(this.month)}-${this.getDate(this.date)}-${this.year}${this.extension}`;
+      this.globalDataUrl = `${this.baseURL}${this.getDate(this.month)}-${this.getDate(this.date -1)}-${this.year}${this.extension}`;
       console.log(this.globalDataUrl);
    }
 
