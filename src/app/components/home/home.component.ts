@@ -29,10 +29,22 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  month
+  date;
+  year;
 
-  constructor(private dataService: DataServiceService) { }
-
-
+  getDate(date : number){
+    if(date < 10){
+      return '0'+date
+    }
+    return date;
+  }
+  constructor(private dataService: DataServiceService) {
+    let now = new Date()
+    this.month = now.getMonth() +  1;
+    this.year = now.getFullYear();
+    this.date = now.getDate() - 1;
+   }
 
   ngOnInit(): void {
 

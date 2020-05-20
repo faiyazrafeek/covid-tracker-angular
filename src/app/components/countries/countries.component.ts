@@ -32,7 +32,23 @@ export class CountriesComponent implements OnInit {
     }
   }
 
-  constructor(private service : DataServiceService) { }
+  month
+  date;
+  year;
+
+  getDate(date : number){
+    if(date < 10){
+      return '0'+date
+    }
+    return date;
+  }
+
+  constructor(private service : DataServiceService) {
+    let now = new Date()
+    this.month = now.getMonth() +  1;
+    this.year = now.getFullYear();
+    this.date = now.getDate() - 1;
+   }
 
   ngOnInit(): void {
 
