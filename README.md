@@ -2,7 +2,12 @@
 
 Link : https://fa-covid.netlify.app/
 
-FA-Covid Tracker is a web Based live COVID-19 daily Statistic Dashboard generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+FA-Covid Tracker is a web Based live COVID-19 daily Statistic Dashboard generated with [Angular CLI](https://github.com/angular/angular-cli).
+
+The problem I took up for the project was the COVID-19 related explanation. Nowadays, the entire world is completely frozen by the Corona virus. So I chose this project because this issue is timely and community-oriented.They will be able to learn about the spread of Corona virus to the public through this application and how it spreads in different countries.
+
+Through this application, they will be able to clearly understand the impact internationally and nation-wide. The charts are attached to it so they can easily see how it spreads day by day.
+
  - Anyone can get updated with day to day COVID-19 cases around the world.
  ![Home Page](https://github.com/faiyazrafeek/covid-tracker-angular/blob/master/src/assets/home.png)
  - Users can compare the counts using charts and tables.
@@ -20,7 +25,7 @@ Angular [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Guide to deploy the application on a developer machine
 
-Just Clone this Repository and do the follwing
+Just Clone this Repository and do the follwing steps
 
 ## Development server
 
